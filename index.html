@@ -2864,12 +2864,13 @@ footer span { color: var(--tomate); }
   display: flex;
 }
 .cangrejo-fullscreen-overlay img {
-  max-width: 100vw;
-  max-height: 100vh;
+  max-width: 92vw;
+  max-height: 88vh;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
+  padding: 60px 40px 80px 40px;
 }
 .cangrejo-fullscreen-close {
   position: fixed;
@@ -2999,11 +3000,7 @@ footer span { color: var(--tomate); }
   </div>
 </section>
 
-<div class="section-divider">
-  <div class="section-divider-line"></div>
-  <div class="section-divider-diamond"></div>
-  <div class="section-divider-line"></div>
-</div>
+<div class="section-divider-band"></div>
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- SECTION 2: SOBRE EL PROYECTO               -->
@@ -3035,7 +3032,6 @@ footer span { color: var(--tomate); }
 </section>
 
 <div class="section-divider-band"></div>
-
 <!-- ═══════════════════════════════════════════ -->
 <!-- SECTION 3: MAPA                            -->
 <!-- ═══════════════════════════════════════════ -->
@@ -3053,24 +3049,24 @@ footer span { color: var(--tomate); }
              <div class="cangrejos-thumb-label">Los Cangrejos</div>
            </div>
     </div>
-    <!-- Fullscreen overlay for cangrejos images -->
-    <div class="cangrejo-fullscreen-overlay" id="cangrejoFullscreen" onclick="closeCangrejoFullscreen()">
-      <button class="cangrejo-fullscreen-close" onclick="closeCangrejoFullscreen()">✕</button>
-      <img id="cangrejoFullscreenImg" src="" alt="">
-      <div class="cangrejo-fullscreen-caption" id="cangrejoFullscreenCaption"></div>
-    </div>
   </div>
 </section>
 
-<div class="section-divider-chevron"><span></span><span></span><span></span></div>
+<!-- Fullscreen overlay for cangrejos images (moved outside section to avoid overflow:hidden clipping) -->
+<div class="cangrejo-fullscreen-overlay" id="cangrejoFullscreen" onclick="closeCangrejoFullscreen()">
+  <button class="cangrejo-fullscreen-close" onclick="closeCangrejoFullscreen()">&#x2715;</button>
+  <img id="cangrejoFullscreenImg" src="" alt="" style="max-width:92vw;max-height:92vh;width:auto;height:auto;object-fit:contain;display:block;">
+  <div class="cangrejo-fullscreen-caption" id="cangrejoFullscreenCaption"></div>
+</div>
 
+<div class="section-divider-band"></div>
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- SECTION 5: HISTORIA DEL PROYECTO           -->
 <!-- ═══════════════════════════════════════════ -->
 <section id="timeline">
   <div class="section-wrap">
-    <div class="section-label reveal">Historia del Proyecto Los Cangrejos</div>
+    <h2 class="section-title reveal">Historia del Proyecto Los Cangrejos</h2>
    <!--  <h2 class="section-title reveal">Más de 35 años de exploración</h2>
     <div class="phase-banner reveal">
       <span class="phase-pill done">✓ Exploración Inicial (2012-2021)</span>
@@ -3211,14 +3207,8 @@ footer span { color: var(--tomate); }
   <button class="drill-stats-close" id="drillStatsClose">Cerrar</button>
 </div>
 
-<div class="section-divider">
-  <div class="section-divider-dot"></div>
-  <div class="section-divider-line"></div>
-  <div class="section-divider-diamond"></div>
-  <div class="section-divider-line"></div>
-  <div class="section-divider-dot"></div>
-</div>
 
+<div class="section-divider-band"></div>
 <!-- ═══════════════════════════════════════════ -->
 <!-- SECTION 6: DONDE ESTAMOS Y HACIA DÓNDE VAMOS -->
 <!-- ═══════════════════════════════════════════ -->
@@ -3355,7 +3345,7 @@ footer span { color: var(--tomate); }
    <!--  <div class="section-label reveal">ESG</div>-->
     <h2 class="section-title reveal">Cumplimiento Ambiental</h2>
   </div>
-  <div class="cumplimiento-img-animated reveal" style="margin-top:40px;">
+  <div class="cumplimiento-img-animated reveal" style="margin:40px auto 0 auto; max-width:80%;">
       <img src="upload/cumplimientoambiental.jpeg" alt="Pirámide del Relacionamiento" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(251,173,24,0.15);box-shadow:0 0 40px rgba(251,173,24,0.06);display:block;">
     </div>
   </div>
@@ -3535,7 +3525,7 @@ footer span { color: var(--tomate); }
       </div>
     </div>
   </div>-->
-
+<div class="section-divider-band"></div>
   <div class="ambiental-section">
     <div class="section-wrap">
       <div class="reveal">
@@ -3572,11 +3562,7 @@ footer span { color: var(--tomate); }
 
 </section>
 
-<div class="section-divider">
-  <div class="section-divider-line"></div>
-  <div class="section-divider-diamond"></div>
-  <div class="section-divider-line"></div>
-</div>
+
 
 <!-- 8d: Monitoreo Biótico -->
 <!-- <section id="biotico">
@@ -3597,7 +3583,7 @@ footer span { color: var(--tomate); }
 
 <div class="divider"></div>-->
 
-
+<div class="section-divider-band"></div>
 <!-- 8f: Rehabilitación Ambiental -->
 <section id="rehabilitacion">
   <div class="section-wrap">
@@ -3918,6 +3904,7 @@ footer span { color: var(--tomate); }
     </div>
   </div>
 </section>-->
+<div class="section-divider-band"></div>
 <!-- 8e: Programa Verde Monte -->
 <section id="verde-monte">
   <div class="section-wrap">
@@ -3958,8 +3945,7 @@ footer span { color: var(--tomate); }
   </div>
 </section>
 
-<div class="section-divider-chevron"><span></span><span></span><span></span></div>
-
+<div class="section-divider-band"></div>
 <!-- ═══════════════════════════════════════════ -->
 <!-- SOCIAL - PIRÁMIDE DEL RELACIONAMIENTO      -->
 <!-- ═══════════════════════════════════════════ -->
@@ -3993,7 +3979,7 @@ footer span { color: var(--tomate); }
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════ -->
+<div class="section-divider-band"></div><!-- ═══════════════════════════════════════════ -->
 <!-- INFRAESTRUCTURA Y SERVICIOS COMUNITARIOS   -->
 <!-- ═══════════════════════════════════════════ -->
 <section style="background:linear-gradient(180deg, var(--dark), var(--dark2));">
@@ -4150,7 +4136,7 @@ footer span { color: var(--tomate); }
         <div class="gallery-card" onclick="openMonitorModal(this.querySelector('img').src, this.querySelector('img').alt)">
           <img src="upload/odintecuida.JPG" alt="ODIN Te Cuida" class="gallery-card-img">
           <div class="gallery-card-overlay"></div>
-          <div class="gallery-card-title">Odin Te Cuida- Brigadas Médicas Comunitarias</div>
+          <div class="gallery-card-title">ODIN Te Cuida- Brigadas Médicas Comunitarias</div>
         </div>
         <div class="gallery-card" onclick="openMonitorModal(this.querySelector('img').src, this.querySelector('img').alt)">
           <img src="upload/MonitoreoAmbientalComunitario.jpeg" alt="Monitores ambientales" class="gallery-card-img">
@@ -4194,6 +4180,7 @@ footer span { color: var(--tomate); }
       </div>
     </div>
   </div>
+  <div class="section-divider-band"></div>
 </section>
 
 <!-- ═══════════════════════════════════════════ -->
@@ -4201,8 +4188,8 @@ footer span { color: var(--tomate); }
 <!-- ═══════════════════════════════════════════ -->
 
  <section id="biotico" style="background:#000;padding:0;min-height:100vh;display:flex;align-items:center;justify-content:center;">
-  <div style="width:100vw;height:100vh;position:relative;overflow:hidden;">
-    <video controls playsinline autoplay muted loop poster="" style="width:100vw;height:100vh;object-fit:cover;display:block;">
+  <div style="width:100vw;height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+    <video controls playsinline autoplay muted loop poster="" style="max-width:90vw;max-height:90vh;object-fit:contain;display:block;margin:auto;">
       <source src="upload/video.mp4" type="video/mp4">
       Su navegador no soporta la reproducción de video.
     </video>
@@ -4216,6 +4203,7 @@ footer span { color: var(--tomate); }
   <div class="section-divider-line"></div>
   <div class="section-divider-dot"></div>
 </div>
+<div class="section-divider-band"></div>
 <!-- ═══════════════════════════════════════════ -->
 <!-- SECTION 4: BOLETÍN DE PRENSA               -->
 <!-- ═══════════════════════════════════════════ -->
