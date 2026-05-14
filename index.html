@@ -251,10 +251,10 @@ section {
 }
 .section-title {
   font-family: 'Futura', 'Jost', sans-serif;
-  font-size: clamp(36px, 4vw, 60px);
+  font-size: clamp(25px, 2.8vw, 42px);
   font-weight: 700;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 /* ABOUT SECTION */
@@ -312,7 +312,7 @@ section {
   letter-spacing: 0.5px;
 }
 .mission-card {
-  padding: 40px;
+  padding: 20px;
   background: linear-gradient(135deg, rgba(91,33,182,0.25), rgba(196,181,253,0.1));
   border: 1px solid rgba(91,33,182,0.4);
   border-radius: 12px;
@@ -443,7 +443,7 @@ section {
 .press-carousel-slide img {
   max-width: 90%;   /* 👈 clave: deja aire a los lados */
   width: auto;
-  max-height: 600px;
+  max-height: 420px;
   object-fit: contain;
 
   display: block;
@@ -521,7 +521,7 @@ section {
 .boletin-static-wrap {
   width: 100%;
   height: 100%;
-  min-height: 400px;
+  min-height: 300px;
   border-radius: 12px;
   border: 1px solid rgba(251,173,24,0.15);
   overflow: hidden;
@@ -532,7 +532,7 @@ section {
 }
 .boletin-static-wrap img {
   max-width: 90%;
-  max-height: 600px;
+  max-height: 420px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1353,6 +1353,248 @@ section {
   letter-spacing: 2px;
   z-index: 100001;
   pointer-events: none;
+}
+
+/* MONITORING SLIDES CAROUSEL */
+.monitoring-slides-carousel {
+  position: relative;
+  margin-top: 60px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(251,173,24,0.15);
+  background: rgba(255,255,255,0.02);
+}
+.monitoring-slides-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.monitoring-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+}
+.monitoring-slide-img {
+  flex: 0 0 45%;
+  height: 384px;
+  overflow: hidden;
+  position: relative;
+}
+.monitoring-slide-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.monitoring-slide:hover .monitoring-slide-img img {
+  transform: scale(1.03);
+}
+.monitoring-slide-content {
+  flex: 1;
+  padding: 48px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.monitoring-slide-content::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10%; bottom: 10%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--tomate), transparent);
+}
+.monitoring-slide-number {
+  font-family: 'Futura', 'Jost', sans-serif;
+  font-size: 72px;
+  font-weight: 900;
+  color: rgba(251,173,24,0.08);
+  line-height: 1;
+  margin-bottom: 8px;
+  position: absolute;
+  top: 24px; right: 32px;
+}
+.monitoring-slide-label {
+  font-family: 'Avenir', 'Nunito Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--tomate);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.monitoring-slide-label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--tomate);
+}
+.monitoring-slide-content h3 {
+  font-family: 'Futura', 'Jost', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.monitoring-slide-content p {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.monitoring-slide-content .status-badge {
+  margin-bottom: 8px;
+}
+.monitoring-slide-content .click-hint-slide {
+  font-size: 12px;
+  color: var(--tomate);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+.monitoring-slide-content .click-hint-slide:hover {
+  opacity: 1;
+}
+
+/* Biotico video slide */
+.monitoring-slide-video {
+  flex: 0 0 55%;
+  height: 307px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.monitoring-slide-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.monitoring-slide-video-content {
+  flex: 1;
+  padding: 48px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.monitoring-slide-video-content::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10%; bottom: 10%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--green), transparent);
+}
+
+/* Monitoring carousel navigation */
+.monitoring-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(15,10,27,0.9);
+  border: 1.5px solid rgba(251,173,24,0.4);
+  color: var(--tomate);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+}
+.monitoring-arrow:hover {
+  background: rgba(251,173,24,0.25);
+  border-color: var(--tomate);
+  box-shadow: 0 0 30px rgba(251,173,24,0.3);
+}
+.monitoring-arrow.prev { left: 20px; }
+.monitoring-arrow.next { right: 20px; }
+.monitoring-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.monitoring-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: rgba(251,173,24,0.2);
+  cursor: pointer;
+  transition: all 0.4s;
+  border: 1px solid rgba(251,173,24,0.15);
+}
+.monitoring-dot.active {
+  background: var(--tomate);
+  box-shadow: 0 0 16px rgba(251,173,24,0.5);
+  transform: scale(1.3);
+  border-color: var(--tomate);
+}
+.monitoring-slide-counter {
+  font-family: 'Avenir', 'Nunito Sans', sans-serif;
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 12px;
+  opacity: 0.6;
+}
+
+/* Section title for monitoring */
+.monitoring-section-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+.monitoring-section-header h2 {
+  font-family: 'Futura', 'Jost', sans-serif;
+  font-size: clamp(25px, 2.8vw, 42px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+.monitoring-section-divider {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(251,173,24,0.3), transparent);
+}
+
+@media (max-width: 900px) {
+  .monitoring-slide {
+    flex-direction: column;
+  }
+  .monitoring-slide-img,
+  .monitoring-slide-video {
+    flex: 0 0 auto;
+    height: 240px;
+    width: 100%;
+  }
+  .monitoring-slide-content,
+  .monitoring-slide-video-content {
+    padding: 32px 24px;
+  }
+  .monitoring-slide-number {
+    font-size: 48px;
+  }
+  .monitoring-slide-content h3 {
+    font-size: 22px;
+  }
 }
 
 /* MONITOREO BIOTICO */
@@ -2942,6 +3184,445 @@ footer span { color: var(--tomate); }
     height: 150px;
   }
 }
+
+/* ═══ REHAB FLEX LAYOUT (compact, side-by-side) ═══ */
+.rehab-flex-layout {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 8px;
+}
+.rehab-stats-box.compact {
+  flex: 1;
+  margin-top: 0;
+}
+.rehab-stats-box.compact .rehab-stats-header {
+  padding: 16px 20px;
+}
+.rehab-stats-box.compact .rehab-stats-header h4 {
+  font-size: 17px;
+}
+.rehab-stats-box.compact .rehab-year-section {
+  padding: 0 20px;
+}
+.rehab-stats-box.compact .rehab-year-label {
+  padding: 12px 0 8px;
+  font-size: 12px;
+}
+.rehab-stats-box.compact .rehab-row {
+  padding: 8px 0;
+}
+.rehab-stats-box.compact .rehab-row-label {
+  font-size: 13px;
+}
+.rehab-stats-box.compact .rehab-row-value {
+  font-size: 16px;
+}
+.rehab-stats-box.compact .rehab-totals {
+  padding: 16px 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.rehab-stats-box.compact .rehab-total-num {
+  font-size: 26px;
+}
+.rehab-stats-box.compact .rehab-total-lbl {
+  font-size: 10px;
+}
+
+/* ═══ REHAB VIDEO BUTTON ═══ */
+.rehab-video-btn-wrap {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ═══ REHAB TOTALS STANDALONE (above video) ═══ */
+.rehab-totals-standalone {
+  padding: 20px;
+  background: rgba(15,10,27,0.6);
+  border: 1px solid rgba(167,139,250,0.25);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.rehab-totals-standalone.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.rehab-totals-standalone .rehab-total-item {
+  text-align: center;
+}
+.rehab-totals-standalone .rehab-total-num {
+  font-family: 'Futura', 'Jost', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--green);
+  text-shadow: 0 0 20px rgba(167,139,250,0.3);
+}
+.rehab-totals-standalone .rehab-total-lbl {
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.rehab-video-btn {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(167,139,250,0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.rehab-video-btn:hover {
+  border-color: var(--tomate);
+  box-shadow: 0 0 30px rgba(251,173,24,0.3);
+  transform: scale(1.03);
+}
+.rehab-video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.rehab-play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s;
+}
+.rehab-video-btn:hover .rehab-play-overlay {
+  background: rgba(0,0,0,0.3);
+}
+.rehab-play-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(251,173,24,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #0a0612;
+  box-shadow: 0 0 20px rgba(251,173,24,0.5);
+}
+.rehab-play-text {
+  font-family: 'Avenir', 'Nunito Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ═══ REHAB VIDEO FULLSCREEN OVERLAY ═══ */
+.rehab-video-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.97);
+  z-index: 99998;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+.rehab-video-overlay.show {
+  display: flex;
+}
+.rehab-video-fullscreen {
+  position: relative;
+  width: 90vw;
+  height: 85vh;
+  max-width: 1200px;
+}
+.rehab-video-close-btn {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15,10,27,0.9);
+  border: 2px solid rgba(251,173,24,0.5);
+  color: var(--tomate);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(251,173,24,0.3);
+}
+.rehab-video-close-btn:hover {
+  background: rgba(251,173,24,0.4);
+  transform: scale(1.1);
+}
+
+/* ═══ VERDE MONTE LAYOUT (stats left, image right) ═══ */
+.verde-monte-layout {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+}
+.verde-monte-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.verde-monte-right {
+  flex: 0 0 340px;
+  min-height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.verde-monte-left .circle-stats {
+  gap: 12px;
+}
+.verde-monte-left .circle-stat {
+  padding: 16px;
+}
+.verde-monte-left .circle-num {
+  font-size: 30px;
+}
+
+/* ═══ FULLSCREEN SLIDESHOW MODE ═══ */
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Make sections content centered */
+section > .section-wrap,
+section > .biotico-particles ~ .section-wrap,
+section .gantt-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* Remove section divider bands from flow */
+.section-divider-band {
+  display: none;
+}
+
+/* Right-side slide navigation panel */
+.slide-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.slide-nav-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(251,173,24,0.4);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  pointer-events: auto;
+}
+
+.slide-nav-dot::before {
+  content: attr(data-label);
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-family: 'Avenir', 'Nunito Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--tomate);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  background: rgba(10,6,18,0.9);
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(251,173,24,0.3);
+  backdrop-filter: blur(10px);
+}
+
+.slide-nav-dot:hover::before {
+  opacity: 1;
+  right: 32px;
+}
+
+.slide-nav-dot:hover {
+  border-color: var(--tomate);
+  transform: scale(1.3);
+}
+
+.slide-nav-dot.active {
+  background: var(--tomate);
+  border-color: var(--tomate);
+  box-shadow: 0 0 16px rgba(251,173,24,0.6);
+  transform: scale(1.3);
+}
+
+/* Slide transition animations */
+section .slide-content {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+section.active-slide .slide-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide counter badge */
+.slide-counter {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10000;
+  font-family: 'Futura', 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(251,173,24,0.5);
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
+/* Nav arrows (up/down) */
+.slide-nav-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(251,173,24,0.3);
+  background: rgba(10,6,18,0.7);
+  color: var(--tomate);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+
+.slide-nav-arrow:hover {
+  background: rgba(251,173,24,0.2);
+  border-color: var(--tomate);
+  box-shadow: 0 0 16px rgba(251,173,24,0.3);
+  transform: scale(1.1);
+}
+
+.slide-nav-arrow.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Section-specific slide adjustments */
+#hero { height: 100vh; }
+#about .about-grid { align-items: center; }
+#timeline .section-wrap { padding-top: 30px !important; padding-bottom: 20px !important; }
+#timeline .section-title { margin-bottom: 6px !important; }
+#timeline .timeline-track { margin-top: 8px !important; height: 140px !important; }
+#timeline .corporate-round-images { margin-top: 16px !important; gap: 20px !important; }
+#timeline .corporate-round-frame { width: 120px !important; height: 120px !important; }
+#timeline .tl-year { font-size: 12px !important; }
+#timeline .tl-label { font-size: 9px !important; }
+#donde-estamos .section-wrap { padding-top: 20px !important; padding-bottom: 10px !important; }
+#donde-estamos .section-title { margin-bottom: 4px !important; }
+#donde-estamos .section-wrap > p { margin-bottom: 4px !important; }
+#donde-estamos .gantt-container { padding-top: 0 !important; padding-bottom: 10px !important; margin-top: 0 !important; }
+#donde-estamos .gantt-chart { margin-top: 8px !important; }
+#boletin .section-wrap { padding-top: 40px; padding-bottom: 40px; }
+#social .section-wrap { padding-top: 20px !important; padding-bottom: 20px !important; }
+#social .section-title { margin-bottom: 4px !important; }
+#social { overflow-y: auto; scroll-snap-align: start; }
+#verde-monte .section-wrap { padding-top: 20px !important; padding-bottom: 16px !important; }
+#verde-monte .section-title { margin-bottom: 6px !important; }
+#monitoreo-ambiental .section-wrap { padding-top: 20px !important; padding-bottom: 16px !important; }
+#monitoreo-ambiental .section-title { margin-bottom: 6px !important; }
+#monitoreo-biotico .section-wrap { padding-top: 20px !important; padding-bottom: 16px !important; }
+#rehabilitacion .section-wrap { padding-top: 20px !important; padding-bottom: 16px !important; }
+/* New gallery sections as slides */
+#infraestructura .section-wrap,
+#programas-productivos .section-wrap,
+#capacitacion-educacion .section-wrap,
+#salud-medioambiente .section-wrap,
+#eventos-culturales .section-wrap { padding-top: 20px !important; padding-bottom: 16px !important; }
+.ambiental-section .section-wrap { padding-top: 20px !important; padding-bottom: 20px !important; }
+.ambiental-section .section-title { margin-bottom: 6px !important; }
+.monitor-grid { margin-top: 12px !important; gap: 12px !important; }
+.monitor-card { padding: 20px !important; }
+.monitor-card h3 { font-size: 16px !important; }
+.monitor-card p { font-size: 12px !important; }
+/* All gallery sections compact */
+.gallery-section { padding: 0 0 10px 0 !important; }
+.gallery-section .section-title { margin-bottom: 8px !important; }
+.gallery-grid { margin-top: 10px !important; gap: 10px !important; grid-template-columns: repeat(3, 1fr) !important; }
+.gallery-card-img { height: calc((100vh - 160px) / 2.2) !important; max-height: 220px !important; }
+.gallery-card-title { bottom: 10px !important; left: 10px !important; right: 10px !important; font-size: 12px !important; }
+
+/* Hide scroll-hint in slideshow mode */
+.scroll-hint { display: none; }
+
+/* Ambiental section - allow internal scroll */
+#ambiental {
+  overflow-y: auto;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 768px) {
+  .slide-nav { right: 12px; gap: 4px; }
+  .slide-nav-dot { width: 10px; height: 10px; }
+  .slide-nav-dot::before { display: none; }
+  section > .section-wrap,
+  section .gantt-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .rehab-flex-layout { flex-direction: column; }
+  .rehab-video-btn-wrap { flex: 0 0 auto !important; }
+  .verde-monte-layout { flex-direction: column-reverse; }
+  .verde-monte-right { flex: 0 0 auto; min-height: 180px; }
+}
 </style>
 </head>
 <body>
@@ -2952,6 +3633,31 @@ footer span { color: var(--tomate); }
 
 <!-- Particle canvas -->
 <canvas id="particles-canvas"></canvas>
+
+<!-- ═══ SLIDE NAVIGATION PANEL ═══ -->
+<nav class="slide-nav" id="slideNav">
+  <button class="slide-nav-arrow" id="slideArrowUp" aria-label="Previous slide">▲</button>
+  <div class="slide-nav-dot active" data-index="0" data-label="Inicio" data-target="hero"></div>
+  <div class="slide-nav-dot" data-index="1" data-label="Sobre el Proyecto" data-target="about"></div>
+  <div class="slide-nav-dot" data-index="2" data-label="Ubicación" data-target="biotico"></div>
+  <div class="slide-nav-dot" data-index="3" data-label="Historia" data-target="timeline"></div>
+  <div class="slide-nav-dot" data-index="4" data-label="Fases del Proyecto" data-target="donde-estamos"></div>
+  <div class="slide-nav-dot" data-index="5" data-label="Cumplimiento Ambiental" data-target="ambiental"></div>
+  <div class="slide-nav-dot" data-index="6" data-label="Monitoreo Ambiental" data-target="monitoreo-ambiental"></div>
+  <div class="slide-nav-dot" data-index="7" data-label="Monitoreo Biótico" data-target="monitoreo-biotico"></div>
+  <div class="slide-nav-dot" data-index="8" data-label="Rehabilitación" data-target="rehabilitacion"></div>
+  <div class="slide-nav-dot" data-index="9" data-label="Verde Monte" data-target="verde-monte"></div>
+  <div class="slide-nav-dot" data-index="10" data-label="Social" data-target="social"></div>
+  <div class="slide-nav-dot" data-index="11" data-label="Infraestructura" data-target="infraestructura"></div>
+  <div class="slide-nav-dot" data-index="12" data-label="Productivos" data-target="programas-productivos"></div>
+  <div class="slide-nav-dot" data-index="13" data-label="Capacitación" data-target="capacitacion-educacion"></div>
+  <div class="slide-nav-dot" data-index="14" data-label="Salud" data-target="salud-medioambiente"></div>
+  <div class="slide-nav-dot" data-index="15" data-label="Eventos" data-target="eventos-culturales"></div>
+  <div class="slide-nav-dot" data-index="16" data-label="Boletín" data-target="boletin"></div>
+  <div class="slide-nav-dot" data-index="17" data-label="Contacto" data-target="contacto"></div>
+  <button class="slide-nav-arrow" id="slideArrowDown" aria-label="Next slide">▼</button>
+</nav>
+<div class="slide-counter" id="slideCounter">01 / 18</div>
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- SECTION 1: HERO / MAIN PAGE                -->
@@ -3037,9 +3743,9 @@ footer span { color: var(--tomate); }
 <!-- ═══════════════════════════════════════════ -->
 <section id="biotico">
   <div class="biotico-particles" id="bioticoParticles"></div>
-  <div class="section-wrap">
-    <h2 class="section-title reveal">Proyecto Los Cangrejos</h2>
-    <div class="cangrejos-dual-img reveal" style="transition-delay:0.2s">
+  <div class="section-wrap" style="max-width:1560px;">
+    <h2 class="section-title reveal" style="font-size:clamp(30px, 3.4vw, 50px);">Proyecto Los Cangrejos</h2>
+    <div class="cangrejos-dual-img reveal" style="transition-delay:0.2s; transform: scale(1.2); transform-origin: top center; margin-bottom: 80px;">
            <div class="cangrejos-thumb-btn" onclick="openCangrejoFullscreen('upload/mapa2.jpeg','Regional')">
              <img src="upload/mapa2.jpeg" alt="Regional">
              <div class="cangrejos-thumb-label">Regional</div>
@@ -3065,8 +3771,8 @@ footer span { color: var(--tomate); }
 <!-- SECTION 5: HISTORIA DEL PROYECTO           -->
 <!-- ═══════════════════════════════════════════ -->
 <section id="timeline">
-  <div class="section-wrap">
-    <h2 class="section-title reveal">Historia del Proyecto Los Cangrejos</h2>
+  <div class="section-wrap" style="max-width:1560px;">
+    <h2 class="section-title reveal" style="font-size:clamp(30px, 3.4vw, 50px);">Historia del Proyecto Los Cangrejos</h2>
    <!--  <h2 class="section-title reveal">Más de 35 años de exploración</h2>
     <div class="phase-banner reveal">
       <span class="phase-pill done">✓ Exploración Inicial (2012-2021)</span>
@@ -3075,7 +3781,7 @@ footer span { color: var(--tomate); }
       <span class="phase-pill future">○ Contrato Estado / EIA (2026-2028)</span>
       <span class="phase-pill future">○ Construcción (2028+)</span>
     </div>-->
-    <div class="timeline-track reveal" style="margin-top:60px">
+    <div class="timeline-track reveal" style="margin-top:60px; transform: scale(1.2); transform-origin: top center; height: 240px;">
       <div class="timeline-line">
         <div class="timeline-progress" id="tlProgress"></div>
       </div>
@@ -3165,26 +3871,23 @@ footer span { color: var(--tomate); }
       </div>
     </div>
 
-    <!-- Highlighted drilling stats popup trigger -->
-    <div style="text-align:center; margin-top:48px;" class="reveal">
-      <button id="drillStatsBtn" style="display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:linear-gradient(135deg,rgba(251,173,24,0.12),rgba(91,33,182,0.12));border:2px solid rgba(251,173,24,0.4);color:var(--tomate);border-radius:50px;font-family:'Avenir','Nunito Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all 0.3s;letter-spacing:1.5px;text-transform:uppercase;box-shadow:0 0 20px rgba(251,173,24,0.1);" onmouseover="this.style.background='linear-gradient(135deg,rgba(251,173,24,0.3),rgba(91,33,182,0.25))';this.style.boxShadow='0 0 40px rgba(251,173,24,0.3)';this.style.borderColor='rgba(251,173,24,0.8)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(251,173,24,0.12),rgba(91,33,182,0.12))';this.style.boxShadow='0 0 20px rgba(251,173,24,0.1)';this.style.borderColor='rgba(251,173,24,0.4)';this.style.transform='translateY(0)'">
-        <span>&#9874;&#65039;</span> Ver Logros de Perforación <span style="font-size:18px">&#8594;</span>
-      </button>
-    </div>
-
-    <!-- Corporate round frame images -->
-    <div class="corporate-round-images reveal" style="margin-top:48px;">
-      <div class="corporate-round-frame">
-        <!-- REEMPLAZAR: imagen original 2.png -->
-        <img src="upload/44.png" alt="Imagen corporativa 1">
+    <!-- Button left + Corporate images right -->
+    <div style="display:flex;align-items:center;gap:40px;margin-top:24px;" class="reveal">
+      <div style="flex-shrink:0;">
+        <button id="drillStatsBtn" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:linear-gradient(135deg,rgba(251,173,24,0.12),rgba(91,33,182,0.12));border:1.5px solid rgba(251,173,24,0.4);color:var(--tomate);border-radius:50px;font-family:'Avenir','Nunito Sans',sans-serif;font-size:11px;font-weight:700;cursor:pointer;transition:all 0.3s;letter-spacing:1px;text-transform:uppercase;box-shadow:0 0 12px rgba(251,173,24,0.1);" onmouseover="this.style.background='linear-gradient(135deg,rgba(251,173,24,0.3),rgba(91,33,182,0.25))';this.style.boxShadow='0 0 24px rgba(251,173,24,0.3)';this.style.borderColor='rgba(251,173,24,0.8)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(251,173,24,0.12),rgba(91,33,182,0.12))';this.style.boxShadow='0 0 12px rgba(251,173,24,0.1)';this.style.borderColor='rgba(251,173,24,0.4)'">
+          &#9874;&#65039; Logros de Perforación &#8594;
+        </button>
       </div>
-      <div class="corporate-round-frame">
-        <!-- REEMPLAZAR: imagen original 2.png -->
-        <img src="upload/24.png" alt="Imagen corporativa 1">
-      </div>
-      <div class="corporate-round-frame">
-        <!-- REEMPLAZAR: imagen original Imagen_1.png -->
-        <img src="upload/313.png" alt="Imagen corporativa 2">
+      <div class="corporate-round-images reveal" style="margin:0;gap:20px;">
+        <div class="corporate-round-frame" style="width:264px;height:264px;">
+          <img src="upload/44.png" alt="Imagen corporativa 1">
+        </div>
+        <div class="corporate-round-frame" style="width:264px;height:264px;">
+          <img src="upload/24.png" alt="Imagen corporativa 2">
+        </div>
+        <div class="corporate-round-frame" style="width:264px;height:264px;">
+          <img src="upload/313.png" alt="Imagen corporativa 3">
+        </div>
       </div>
     </div>
   </div>
@@ -3341,11 +4044,10 @@ footer span { color: var(--tomate); }
 <!-- SECTION 8: AMBIENTAL (Detailed)            -->
 <!-- ═══════════════════════════════════════════ -->
 <section id="ambiental">
-  <div class="section-wrap" style="padding-bottom: 40px;">
-   <!--  <div class="section-label reveal">ESG</div>-->
+  <div class="section-wrap" style="padding-bottom: 10px;">
     <h2 class="section-title reveal">Cumplimiento Ambiental</h2>
   </div>
-  <div class="cumplimiento-img-animated reveal" style="margin:40px auto 0 auto; max-width:80%;">
+  <div class="cumplimiento-img-animated reveal" style="margin:8px auto 0 auto; max-width:75%;">
       <img src="upload/cumplimientoambiental.jpeg" alt="Pirámide del Relacionamiento" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(251,173,24,0.15);box-shadow:0 0 40px rgba(251,173,24,0.06);display:block;">
     </div>
   </div>
@@ -3525,155 +4227,154 @@ footer span { color: var(--tomate); }
       </div>
     </div>
   </div>-->
-<div class="section-divider-band"></div>
-  <div class="ambiental-section">
-    <div class="section-wrap">
-      <div class="reveal">
-        <h2 class="section-title reveal"> Monitoreo Ambiental</h2>
-      </div>
-      <div class="monitor-grid">
-        <div class="monitor-card water reveal" onclick="openMonitorModal('upload/MonitoreoAmbientalComunitario.jpeg','Calidad del Agua')">
-          <h3>Calidad del Agua</h3>
-          <p>Las quebradas <strong>Las Pavas</strong> y <strong>La Gran Bestia</strong> presentan pH neutro (7-8), alta concentración de oxígeno disuelto (&gt;5.6 mg/kg) y bajo contenido de sales disueltas.</p>
-          <span class="status-badge ok">Calidad Buena · 115 BMWP/Col</span>
-          <div class="click-hint" style="margin-top:12px;">▸ Click para ver imagen</div>
-        </div>
-        <div class="monitor-card air reveal" style="transition-delay:0.1s" onclick="openMonitorModal('upload/aire.jpg','Calidad del Aire')">
-          <h3>Calidad del Aire</h3>
-          <p>Monitoreo anual en <strong>Valle Hermoso</strong> y otros puntos estratégicos. Los resultados se mantienen consistentemente por debajo de los límites normativos.</p>
-          <span class="status-badge ok">Por debajo de límites normativos</span>
-          <div class="click-hint" style="margin-top:12px;">▸ Click para ver imagen</div>
-        </div>
-        <div class="monitor-card soil reveal" style="transition-delay:0.15s" onclick="openMonitorModal('upload/monitoreossuelo.jpeg','Calidad del Suelo')">
-          <h3>Calidad del Suelo</h3>
-          <p>La mayoría de suelos se clasifican como <strong>Inceptisoles</strong>, con concentración natural de cobre &gt;25 mg/kg característica del depósito.</p>
-          <span class="status-badge ok">Dentro de parámetros normativos</span>
-          <div class="click-hint" style="margin-top:12px;">▸ Click para ver imagen</div>
-        </div>
-        <div class="monitor-card noise reveal" style="transition-delay:0.2s" onclick="openMonitorModal('upload/monitoreoderuido.jpeg','Ruido Ambiental')">
-          <h3>Ruido Ambiental</h3>
-          <p>Los niveles se mantienen por debajo de los límites máximos permisibles en todos los puntos medidos, garantizando el bienestar comunitario.</p>
-          <span class="status-badge ok">&lt;70 dB día · &lt;65 dB noche</span>
-          <div class="click-hint" style="margin-top:12px;">▸ Click para ver imagen</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </section>
 
+  <!-- ═══════════════════════════════════════════ -->
+<!-- MONITOREO AMBIENTAL (4 botones) - NEW SECTION -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section-divider-band"></div>
+<section id="monitoreo-ambiental" style="background:linear-gradient(180deg, var(--dark), var(--dark2));">
+  <div class="section-wrap">
+    <div class="reveal">
+      <h2 class="section-title">Monitoreo Ambiental</h2>
+    </div>
+    <div class="monitor-grid">
+      <div class="monitor-card water reveal" onclick="openMonitorModal('upload/MonitoreoAmbientalComunitario.jpeg','Calidad del Agua')">
+        <h3>Calidad del Agua</h3>
+        <p>Las quebradas <strong>Las Pavas</strong> y <strong>La Gran Bestia</strong> presentan pH neutro (7-8), alta concentración de oxígeno disuelto (&gt;5.6 mg/kg) y bajo contenido de sales disueltas.</p>
+        <span class="status-badge ok">Calidad Buena · 115 BMWP/Col</span>
+        <div class="click-hint" style="margin-top:12px;">▸ Click para ver imagen</div>
+      </div>
+      <div class="monitor-card air reveal" style="transition-delay:0.1s" onclick="openMonitorModal('upload/aire.jpg','Calidad del Aire')">
+        <h3>Calidad del Aire</h3>
+        <p>Monitoreo anual en <strong>Valle Hermoso</strong> y otros puntos estratégicos. Los resultados se mantienen consistentemente por debajo de los límites normativos.</p>
+        <span class="status-badge ok">Por debajo de límites normativos</span>
+        <div class="click-hint" style="margin-top:12px;">▸ Click para ver imagen</div>
+      </div>
+      <div class="monitor-card soil reveal" style="transition-delay:0.15s" onclick="openMonitorModal('upload/monitoreossuelo.jpeg','Calidad del Suelo')">
+        <h3>Calidad del Suelo</h3>
+        <p>La mayoría de suelos se clasifican como <strong>Inceptisoles</strong>, con concentración natural de cobre &gt;25 mg/kg característica del depósito.</p>
+        <span class="status-badge ok">Dentro de parámetros normativos</span>
+        <div class="click-hint" style="margin-top:12px;">▸ Click para ver imagen</div>
+      </div>
+      <div class="monitor-card noise reveal" style="transition-delay:0.2s" onclick="openMonitorModal('upload/monitoreoderuido.jpeg','Ruido Ambiental')">
+        <h3>Ruido Ambiental</h3>
+        <p>Los niveles se mantienen por debajo de los límites máximos permisibles en todos los puntos medidos, garantizando el bienestar comunitario.</p>
+        <span class="status-badge ok">&lt;70 dB día · &lt;65 dB noche</span>
+        <div class="click-hint" style="margin-top:12px;">▸ Click para ver imagen</div>
+      </div>
+    </div>
+  </div>
+</section>
 
+  <!-- ═══════════════════════════════════════════ -->
+<!-- MONITOREO BIÓTICO - SLIDE                    -->
+<!-- ═══════════════════════════════════════════ -->
 
 <!-- 8d: Monitoreo Biótico -->
-<!-- <section id="biotico">
-  <div class="biotico-particles" id="bioticoParticles"></div>
+<div class="section-divider-band"></div>
+<section id="monitoreo-biotico">
   <div class="section-wrap">
-    <div class="section-label reveal"></div>
-    <h2 class="section-title reveal">Monitoreo Biótico</h2>
-    <p class="reveal" style="color:var(--text-dim);line-height:1.8;margin-bottom:0">Monitoreo continuo de especies de fauna y flora en el área del Proyecto Los Cangrejos, con énfasis en la conservación de la biodiversidad local.</p>
-    <div class="video-wrapper reveal" style="transition-delay:0.2s">
-      <!-- REEMPLAZAR: video original Fauna_Cangrejos.mp4 -->
-   <!--    <video controls playsinline poster="upload/portadamonitoreo.jpg">
-        <source src="upload/Fauna_Cangrejos.mp4" type="video/mp4">
-        Su navegador no soporta la reproducción de video.
-      </video>
+    <div class="reveal">
+      <div class="monitoring-section-header">
+        <h2>Monitoreo Biótico</h2>
+        <div class="monitoring-section-divider"></div>
+      </div>
+      <p style="color:var(--text-dim);line-height:1.8;margin-bottom:0">Monitoreo continuo de especies de fauna y flora en el área del Proyecto Los Cangrejos, con énfasis en la conservación de la biodiversidad local.</p>
+    </div>
+
+    <div class="monitoring-slides-carousel reveal" id="monitoringCarousel" style="transition-delay:0.15s;">
+      <div class="monitoring-slides-track" id="monitoringTrack">
+
+        <!-- SLIDE: Monitoreo Biótico -->
+        <div class="monitoring-slide">
+          <div class="monitoring-slide-video">
+            <video controls playsinline poster="upload/portadamonitoreo.jpg">
+              <source src="upload/Fauna_Cangrejos.mp4" type="video/mp4">
+              Su navegador no soporta la reproducción de video.
+            </video>
+          </div>
+          <div class="monitoring-slide-video-content">
+            <div class="monitoring-slide-number" style="color:rgba(167,139,250,0.08);">01</div>
+            <div class="monitoring-slide-label" style="color:var(--green);">Monitoreo Biótico</div>
+            <h3>Fauna y Flora Silvestre</h3>
+            <p>Monitoreo continuo de especies de fauna y flora en el área del Proyecto Los Cangrejos, con énfasis en la conservación de la biodiversidad local y la protección de ecosistemas sensibles.</p>
+            <span class="status-badge ok" style="background:rgba(167,139,250,0.15);border-color:rgba(167,139,250,0.3);">Biodiversidad monitoreada</span>
+            <div class="click-hint-slide" style="color:var(--green);">▶ Reproducir video</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>-->
 
 <div class="section-divider-band"></div>
 <!-- 8f: Rehabilitación Ambiental -->
 <section id="rehabilitacion">
-  <div class="section-wrap">
-   <!-- <div class="section-label reveal">Tiempo transcurrido para una rehabilitación</div>-->
+  <div class="section-wrap" style="text-align:left;">
     <h2 class="section-title reveal">Rehabilitación Ambiental</h2>
-    <div class="rehab-layout">
-      <div class="reveal-left">
-        <p class="sub-section-text">Rehabilitación de la plataforma GB-16</p>
-      </div>
-    
+    <div class="reveal-left">
+      <p style="color:var(--text-dim);font-size:15px;line-height:1.6;margin-bottom:12px;">Rehabilitación de la plataforma GB-16</p>
     </div>
 
-    <!-- Animated Stats Box -->
-    <div class="rehab-stats-box" id="rehabStatsBox">
-      <div class="rehab-stats-header">
-        <span style="font-size:24px;">&#x1F4CA;</span>
-        <h4>Progreso de Rehabilitación por Año</h4>
-      </div>
-
-      <!-- 2022 -->
-      <div class="rehab-year-section" id="rehab2022">
-        <div class="rehab-year-label">&#x1F4C5; 2022</div>
-        <div class="rehab-row" id="rehab-r1">
-          <span class="rehab-row-label">Plataformas rehabilitadas</span>
-          <span class="rehab-row-value">85</span>
+    <!-- Side by side: stats box + video button -->
+    <div class="rehab-flex-layout">
+      <!-- Stats box (compact) - yearly data only -->
+      <div class="rehab-stats-box compact" id="rehabStatsBox">
+        <div class="rehab-stats-header">
+          <span style="font-size:16px;">&#x1F4CA;</span>
+          <h4>Progreso por Año</h4>
         </div>
-        <div class="rehab-row" id="rehab-r2">
-          <span class="rehab-row-label">Accesos rehabilitados</span>
-          <span class="rehab-row-value">14,6 km</span>
+        <div class="rehab-year-section" id="rehab2022">
+          <div class="rehab-year-label">&#x1F4C5; 2022</div>
+          <div class="rehab-row" id="rehab-r1"><span class="rehab-row-label">Plataformas</span><span class="rehab-row-value">85</span></div>
+          <div class="rehab-row" id="rehab-r2"><span class="rehab-row-label">Accesos</span><span class="rehab-row-value">14,6 km</span></div>
         </div>
-      </div>
-
-      <!-- 2023 -->
-      <div class="rehab-year-section" id="rehab2023">
-        <div class="rehab-year-label">&#x1F4C5; 2023</div>
-        <div class="rehab-row" id="rehab-r3">
-          <span class="rehab-row-label">Plataformas rehabilitadas</span>
-          <span class="rehab-row-value">172</span>
+        <div class="rehab-year-section" id="rehab2023">
+          <div class="rehab-year-label">&#x1F4C5; 2023</div>
+          <div class="rehab-row" id="rehab-r3"><span class="rehab-row-label">Plataformas</span><span class="rehab-row-value">172</span></div>
+          <div class="rehab-row" id="rehab-r4"><span class="rehab-row-label">Accesos</span><span class="rehab-row-value">18,47 km</span></div>
         </div>
-        <div class="rehab-row" id="rehab-r4">
-          <span class="rehab-row-label">Accesos rehabilitados</span>
-          <span class="rehab-row-value">18,47 km</span>
+        <div class="rehab-year-section" id="rehab2024">
+          <div class="rehab-year-label">&#x1F4C5; 2024</div>
+          <div class="rehab-row" id="rehab-r5"><span class="rehab-row-label">Plataformas</span><span class="rehab-row-value">13</span></div>
+          <div class="rehab-row" id="rehab-r7"><span class="rehab-row-label">Accesos</span><span class="rehab-row-value">22,57 km</span></div>
         </div>
       </div>
 
-      <!-- 2024 -->
-      <div class="rehab-year-section" id="rehab2024">
-        <div class="rehab-year-label">&#x1F4C5; 2024</div>
-        <div class="rehab-row" id="rehab-r5">
-          <span class="rehab-row-label">Plataformas rehabilitadas</span>
-          <span class="rehab-row-value">13</span>
+      <!-- Right column: Totals above + Video button below -->
+      <div class="rehab-video-btn-wrap" style="flex:0 0 320px;display:flex;flex-direction:column;gap:16px;">
+        <!-- Totals box above video -->
+        <div class="rehab-totals-standalone" id="rehabTotals">
+          <div class="rehab-total-item"><div class="rehab-total-num"><span class="counter" data-target="270">0</span></div><div class="rehab-total-lbl">Plataformas</div></div>
+          <div class="rehab-total-item"><div class="rehab-total-num"><span class="counter" data-target="43">0</span></div><div class="rehab-total-lbl">Pozos</div></div>
+          <div class="rehab-total-item"><div class="rehab-total-num">55,64</div><div class="rehab-total-lbl">km Accesos</div></div>
         </div>
-        <div class="rehab-row" id="rehab-r6">
-          <span class="rehab-row-label">Pozos de prueba</span>
-          <span class="rehab-row-value">43</span>
+        <!-- Video button -->
+        <div class="rehab-video-btn" onclick="openRehabVideoFullscreen()">
+          <img src="upload/portadareha.png" alt="Video Rehabilitación" class="rehab-video-thumb">
+          <div class="rehab-play-overlay">
+            <div class="rehab-play-icon">&#x25B6;</div>
+            <div class="rehab-play-text">Ver Video</div>
+          </div>
         </div>
-        <div class="rehab-row" id="rehab-r7">
-          <span class="rehab-row-label">Accesos rehabilitados</span>
-          <span class="rehab-row-value">22,57 km</span>
-        </div>
-      </div>
-
-      <!-- Totals -->
-      <div class="rehab-totals" id="rehabTotals">
-        <div class="rehab-total-item">
-          <div class="rehab-total-num"><span class="counter" data-target="270">0</span></div>
-          <div class="rehab-total-lbl">Plataformas Totales</div>
-        </div>
-        <div class="rehab-total-item">
-          <div class="rehab-total-num"><span class="counter" data-target="43">0</span></div>
-          <div class="rehab-total-lbl">Pozos de Prueba</div>
-        </div>
-        <div class="rehab-total-item">
-          <div class="rehab-total-num">55,64 km</div>
-          <div class="rehab-total-lbl">Accesos Totales</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal" style="margin-top:48px;">
-      <div class="video-responsive" style="border:1px solid rgba(167,139,250,0.2);border-radius:12px;overflow:hidden;">
-        <!-- REEMPLAZAR: video original Fauna_Cangrejos.mp4 -->
-        <video controls playsinline poster="upload/portadareha.png" style="width:100%;display:block;">
-          <source src="upload/rehabiambiente.mp4" type="video/mp4">
-          Su navegador no soporta la reproducción de video.
-        </video>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Fullscreen video overlay for Rehabilitación -->
+<div class="rehab-video-overlay" id="rehabVideoOverlay" onclick="closeRehabVideoFullscreen(event)">
+  <div class="rehab-video-fullscreen" onclick="event.stopPropagation()">
+    <button class="rehab-video-close-btn" onclick="closeRehabVideoFullscreen(event)">&#x2715;</button>
+    <video controls playsinline autoplay style="width:100%;height:100%;object-fit:contain;background:#000;">
+      <source src="upload/rehabiambiente.mp4" type="video/mp4">
+      Su navegador no soporta la reproducción de video.
+    </video>
+  </div>
+</div>
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- VIDEO REHABILITACIÓN AMBIENTAL              -->
@@ -3908,38 +4609,36 @@ footer span { color: var(--tomate); }
 <!-- 8e: Programa Verde Monte -->
 <section id="verde-monte">
   <div class="section-wrap">
-    <div class="reveal-left" style="margin-bottom: 40px;">
-     
-      <h2 class="section-title">Programa Verde Monte</h2>
-      <p style="color:var(--text-dim);line-height:1.8;margin-bottom:32px">Desde 2017, el Programa de Reforestación Verde Monte ha restaurado 184 hectáreas en seis sectores dentro del Proyecto Los Cangrejos, utilizando especies nativas a lo largo de un rango altitudinal de 1.000 metros.</p>
-      <div class="circle-stats">
-        <div class="circle-stat">
-          <div class="circle-num"><span class="counter" data-target="184">0</span>ha</div>
-          <div class="circle-lbl">Hectáreas reforestadas en 6 sectores</div>
+    <h2 class="section-title reveal">Programa Verde Monte</h2>
+    <div class="verde-monte-layout">
+      <!-- LEFT: Stats + description -->
+      <div class="verde-monte-left reveal-left">
+        <p style="color:var(--text-dim);font-size:14px;line-height:1.7;margin-bottom:20px">Desde 2017, el Programa de Reforestación Verde Monte ha restaurado 184 hectáreas en seis sectores dentro del Proyecto Los Cangrejos, utilizando especies nativas a lo largo de un rango altitudinal de 1.000 metros.</p>
+        <div class="circle-stats">
+          <div class="circle-stat">
+            <div class="circle-num"><span class="counter" data-target="184">0</span>ha</div>
+            <div class="circle-lbl">Hectáreas reforestadas en 6 sectores</div>
+          </div>
+          <div class="circle-stat">
+            <div class="circle-num"><span class="counter" data-target="56">0</span></div>
+            <div class="circle-lbl">Especies nativas utilizadas</div>
+          </div>
+          <div class="circle-stat">
+            <div class="circle-num">36K</div>
+            <div class="circle-lbl">Plántulas sembradas (aprox.)</div>
+          </div>
+          <div class="circle-stat">
+            <div class="circle-num">11.8K</div>
+            <div class="circle-lbl">Individuos en fase de monitoreo</div>
+          </div>
         </div>
-        <div class="circle-stat">
-          <div class="circle-num"><span class="counter" data-target="56">0</span></div>
-          <div class="circle-lbl">Especies nativas utilizadas</div>
-        </div>
-        <div class="circle-stat">
-          <div class="circle-num">36K</div>
-          <div class="circle-lbl">Plántulas sembradas (aprox.)</div>
-        </div>
-        <div class="circle-stat">
-          <div class="circle-num">11.8K</div>
-          <div class="circle-lbl">Individuos en fase de monitoreo</div>
+        <div style="margin-top:16px;padding:14px 18px;border:1px solid rgba(167,139,250,0.2);border-radius:8px;background:rgba(167,139,250,0.05)">
+          <p style="font-size:12px;color:var(--text-dim);line-height:1.6">Aporta a la mejora del ciclo hidrológico, recuperación de la biodiversidad y secuestro de carbono. Rango altitudinal: 200 a 1.200 m.s.n.m.</p>
         </div>
       </div>
-      <div style="margin-top:24px;padding:20px 24px;border:1px solid rgba(167,139,250,0.2);border-radius:8px;background:rgba(167,139,250,0.05)">
-        <p style="font-size:13px;color:var(--text-dim);line-height:1.7">🌱 Aporta a la mejora del ciclo hidrológico, recuperación de la biodiversidad y secuestro de carbono. Rango altitudinal: 200 a 1.200 m.s.n.m.</p>
-      </div>
-    </div>
-    <div class="reveal-right" style="display:flex;gap:40px;align-items:center;flex-wrap:wrap;">
-      <!-- Growing Plant SVG Animation -->
-
-      <div style="flex:1;min-width:280px;">
-        <!-- REEMPLAZAR: imagen original DSC_8211.JPG -->
-        <img src="upload/DSC_8211.JPG" alt="Programa Verde Monte" style="width:100%;border-radius:12px;border:1px solid rgba(167,139,250,0.2);box-shadow:0 0 30px rgba(167,139,250,0.08);">
+      <!-- RIGHT: Small image -->
+      <div class="verde-monte-right reveal-right">
+        <img src="upload/DSC_8211.JPG" alt="Programa Verde Monte" style="width:100%;height:100%;object-fit:cover;border-radius:12px;border:1px solid rgba(167,139,250,0.2);box-shadow:0 0 30px rgba(167,139,250,0.08);">
       </div>
     </div>
   </div>
@@ -3950,9 +4649,9 @@ footer span { color: var(--tomate); }
 <!-- SOCIAL - PIRÁMIDE DEL RELACIONAMIENTO      -->
 <!-- ═══════════════════════════════════════════ -->
 <section id="social">
-  <div class="section-wrap">
+  <div class="section-wrap" style="max-width:1560px;">
     <!--<div class="section-label reveal">ODIN Mining del Ecuador, filial de CMOC</div>-->
-    <h2 class="section-title reveal">Social</h2>
+    <h2 class="section-title reveal" style="font-size:clamp(30px, 3.4vw, 50px);">Social</h2>
     
 
    <!-- <div class="pyramid-container" id="pyramidContainer">
@@ -3973,8 +4672,8 @@ footer span { color: var(--tomate); }
       </div>
     </div>-->
 
-    <div style="margin-top:40px;">
-      <img src="upload/piramide.png" alt="Pirámide del Relacionamiento" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(251,173,24,0.15);box-shadow:0 0 40px rgba(251,173,24,0.06);display:block;">
+    <div style="margin-top:8px; transform: scale(1.2); transform-origin: top center; margin-bottom: 80px;">
+      <img src="upload/piramide.png" alt="Pirámide del Relacionamiento" style="width:100%;max-height:65vh;height:auto;object-fit:contain;border-radius:12px;border:1px solid rgba(251,173,24,0.15);box-shadow:0 0 40px rgba(251,173,24,0.06);display:block;">
     </div>
   </div>
 </section>
@@ -3982,7 +4681,7 @@ footer span { color: var(--tomate); }
 <div class="section-divider-band"></div><!-- ═══════════════════════════════════════════ -->
 <!-- INFRAESTRUCTURA Y SERVICIOS COMUNITARIOS   -->
 <!-- ═══════════════════════════════════════════ -->
-<section style="background:linear-gradient(180deg, var(--dark), var(--dark2));">
+<section id="infraestructura" style="background:linear-gradient(180deg, var(--dark), var(--dark2));">
   <div class="section-wrap">
     <div class="gallery-section">
      <!-- <div class="section-label reveal">Social</div>-->
@@ -4029,7 +4728,7 @@ footer span { color: var(--tomate); }
 <!-- ═══════════════════════════════════════════ -->
 <!-- PROGRAMAS PRODUCTIVOS Y DESARROLLO ECONÓMICO -->
 <!-- ═══════════════════════════════════════════ -->
-<section style="background:var(--dark2);">
+<section id="programas-productivos" style="background:var(--dark2);">
   <div class="section-wrap">
     <div class="gallery-section">
      <!-- <div class="section-label reveal">Social</div>-->
@@ -4073,7 +4772,7 @@ footer span { color: var(--tomate); }
 <!-- ═══════════════════════════════════════════ -->
 <!-- CAPACITACIÓN, EDUCACIÓN Y DESARROLLO JUVENIL -->
 <!-- ═══════════════════════════════════════════ -->
-<section style="background:linear-gradient(180deg, var(--dark2), var(--dark));">
+<section id="capacitacion-educacion" style="background:linear-gradient(180deg, var(--dark2), var(--dark));">
   <div class="section-wrap">
     <div class="gallery-section">
      <!-- <div class="section-label reveal">Social</div>-->
@@ -4107,7 +4806,7 @@ footer span { color: var(--tomate); }
 <!-- ═══════════════════════════════════════════ -->
 <!-- PROGRAMAS DE SALUD Y MEDIOAMBIENTE          -->
 <!-- ═══════════════════════════════════════════ -->
-<section style="background:var(--dark);">
+<section id="salud-medioambiente" style="background:var(--dark);">
   <div class="section-wrap">
     <div class="gallery-section">
      <!-- <div class="section-label reveal">Social</div>-->
@@ -4151,7 +4850,7 @@ footer span { color: var(--tomate); }
 <!-- ═══════════════════════════════════════════ -->
 <!-- EVENTOS CULTURALES Y DEPORTES                -->
 <!-- ═══════════════════════════════════════════ -->
-<section style="background:linear-gradient(180deg, var(--dark), var(--dark2));">
+<section id="eventos-culturales" style="background:linear-gradient(180deg, var(--dark), var(--dark2));">
   <div class="section-wrap">
     <div class="gallery-section">
      <!-- <div class="section-label reveal">Social</div>-->
@@ -4180,21 +4879,21 @@ footer span { color: var(--tomate); }
       </div>
     </div>
   </div>
-  <div class="section-divider-band"></div>
 </section>
+  <div class="section-divider-band"></div>
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- SECTION VIDEO  -->
 <!-- ═══════════════════════════════════════════ -->
 
- <section id="biotico" style="background:#000;padding:0;min-height:100vh;display:flex;align-items:center;justify-content:center;">
+ <div id="biotico-video-section" style="background:#000;padding:0;display:none;">
   <div style="width:100vw;height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
     <video controls playsinline autoplay muted loop poster="" style="max-width:90vw;max-height:90vh;object-fit:contain;display:block;margin:auto;">
       <source src="upload/video.mp4" type="video/mp4">
       Su navegador no soporta la reproducción de video.
     </video>
   </div>
-</section>
+</div>
 
 <div class="section-divider">
   <div class="section-divider-dot"></div>
@@ -4454,6 +5153,14 @@ document.querySelectorAll('.counter').forEach(c=>counterObs.observe(c));
   });
 
   startAuto();
+})();
+
+// ─── MONITORING SLIDES CAROUSEL (Biótico) ───
+(function(){
+  const track = document.getElementById('monitoringTrack');
+  if (!track) return;
+  // Single slide — carousel JS kept for future multi-slide expansion
+  // Touch / keyboard / auto-advance not needed for 1 slide
 })();
 
 // ─── TIMELINE PROGRESS ───
@@ -4805,7 +5512,7 @@ function autoRevealRehabData() {
   rehabAutoStarted = true;
 
   const yearSections = ['rehab2022', 'rehab2023', 'rehab2024'];
-  const allRows = ['rehab-r1','rehab-r2','rehab-r3','rehab-r4','rehab-r5','rehab-r6','rehab-r7'];
+  const allRows = ['rehab-r1','rehab-r2','rehab-r3','rehab-r4','rehab-r5','rehab-r7'];
   const totals = document.getElementById('rehabTotals');
 
   // Step 1: Show 2022 (0s)
@@ -4828,8 +5535,7 @@ function autoRevealRehabData() {
   const t3 = setTimeout(() => {
     document.getElementById('rehab2024').classList.add('show');
     rehabTimers.push(setTimeout(() => document.getElementById('rehab-r5').classList.add('show'), 300));
-    rehabTimers.push(setTimeout(() => document.getElementById('rehab-r6').classList.add('show'), 500));
-    rehabTimers.push(setTimeout(() => document.getElementById('rehab-r7').classList.add('show'), 700));
+    rehabTimers.push(setTimeout(() => document.getElementById('rehab-r7').classList.add('show'), 500));
   }, 4000);
   rehabTimers.push(t3);
 
@@ -5047,6 +5753,114 @@ function closeCangrejoFullscreen() {
   overlay.classList.remove('show');
   document.body.style.overflow = '';
 }
+
+// ═══ SLIDESHOW NAVIGATION ═══
+(function() {
+  const sections = document.querySelectorAll('section');
+  const dots = document.querySelectorAll('.slide-nav-dot');
+  const counter = document.getElementById('slideCounter');
+  const arrowUp = document.getElementById('slideArrowUp');
+  const arrowDown = document.getElementById('slideArrowDown');
+  let currentSlide = 0;
+  let isAnimating = false;
+  const totalSlides = sections.length;
+
+  function updateNav(index) {
+    currentSlide = index;
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    sections.forEach((s, i) => s.classList.toggle('active-slide', i === index));
+    if (counter) counter.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(totalSlides).padStart(2, '0');
+    if (arrowUp) arrowUp.classList.toggle('disabled', index === 0);
+    if (arrowDown) arrowDown.classList.toggle('disabled', index === totalSlides - 1);
+  }
+
+  function goToSlide(index) {
+    if (index < 0 || index >= totalSlides || isAnimating) return;
+    isAnimating = true;
+    sections[index].scrollIntoView({ behavior: 'smooth' });
+    updateNav(index);
+    setTimeout(() => { isAnimating = false; }, 1000);
+  }
+
+  // Dot clicks
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goToSlide(parseInt(dot.dataset.index));
+    });
+  });
+
+  // Arrow clicks
+  if (arrowUp) arrowUp.addEventListener('click', () => goToSlide(currentSlide - 1));
+  if (arrowDown) arrowDown.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); goToSlide(currentSlide + 1); }
+    if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); goToSlide(currentSlide - 1); }
+    if (e.key === 'Home') { e.preventDefault(); goToSlide(0); }
+    if (e.key === 'End') { e.preventDefault(); goToSlide(totalSlides - 1); }
+  });
+
+  // Mouse wheel (with debounce)
+  let wheelTimeout = null;
+  document.addEventListener('wheel', (e) => {
+    // Allow scroll inside sections with overflow
+    const activeSection = sections[currentSlide];
+    if (activeSection && activeSection.scrollHeight > activeSection.clientHeight) {
+      const atTop = activeSection.scrollTop <= 0;
+      const atBottom = activeSection.scrollTop + activeSection.clientHeight >= activeSection.scrollHeight - 2;
+      if (e.deltaY < 0 && !atTop) return;
+      if (e.deltaY > 0 && !atBottom) return;
+    }
+    if (wheelTimeout) return;
+    wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 1200);
+    if (e.deltaY > 0) goToSlide(currentSlide + 1);
+    if (e.deltaY < 0) goToSlide(currentSlide - 1);
+  }, { passive: true });
+
+  // Intersection Observer to detect active section
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        const idx = Array.from(sections).indexOf(entry.target);
+        if (idx !== -1) updateNav(idx);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach(section => observer.observe(section));
+
+  // Initial state
+  updateNav(0);
+  sections[0].classList.add('active-slide');
+})();
+
+// ─── REHAB VIDEO FULLSCREEN ───
+function openRehabVideoFullscreen() {
+  var overlay = document.getElementById('rehabVideoOverlay');
+  if (!overlay) return;
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  // Auto-play video when opened
+  var video = overlay.querySelector('video');
+  if (video) video.play();
+}
+function closeRehabVideoFullscreen(e) {
+  if (e && e.target && e.target.tagName === 'VIDEO') return;
+  var overlay = document.getElementById('rehabVideoOverlay');
+  if (!overlay) return;
+  // Pause video before closing
+  var video = overlay.querySelector('video');
+  if (video) { video.pause(); video.currentTime = 0; }
+  overlay.classList.remove('show');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  var overlay = document.getElementById('rehabVideoOverlay');
+  if (overlay && overlay.classList.contains('show') && e.key === 'Escape') {
+    closeRehabVideoFullscreen();
+  }
+});
 
 </script>
 
