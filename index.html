@@ -961,7 +961,8 @@ section {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  justify-content: space-between;
+  justify-content: center;
+  align-self: center;
   flex-shrink: 0;
   opacity: 0;
   transition: opacity 0.6s ease 1.2s;
@@ -982,6 +983,7 @@ section {
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.3s;
+  min-height: 44px;
 }
 .gantt-arrow-item::after {
   content: '→';
@@ -3649,13 +3651,13 @@ section.active-slide .slide-content {
   <div class="slide-nav-dot" data-index="7" data-label="Monitoreo Biótico" data-target="monitoreo-biotico"></div>
   <div class="slide-nav-dot" data-index="8" data-label="Rehabilitación" data-target="rehabilitacion"></div>
   <div class="slide-nav-dot" data-index="9" data-label="Verde Monte" data-target="verde-monte"></div>
-  <div class="slide-nav-dot" data-index="10" data-label="Social" data-target="social"></div>
-  <div class="slide-nav-dot" data-index="11" data-label="Infraestructura" data-target="infraestructura"></div>
-  <div class="slide-nav-dot" data-index="12" data-label="Productivos" data-target="programas-productivos"></div>
-  <div class="slide-nav-dot" data-index="13" data-label="Capacitación" data-target="capacitacion-educacion"></div>
-  <div class="slide-nav-dot" data-index="14" data-label="Salud" data-target="salud-medioambiente"></div>
-  <div class="slide-nav-dot" data-index="15" data-label="Eventos" data-target="eventos-culturales"></div>
-  <div class="slide-nav-dot" data-index="16" data-label="Video" data-target="biotico-video-section"></div>
+  <div class="slide-nav-dot" data-index="10" data-label="Resp. Social" data-target="biotico-video-section"></div>
+  <div class="slide-nav-dot" data-index="11" data-label="Social" data-target="social"></div>
+  <div class="slide-nav-dot" data-index="12" data-label="Infraestructura" data-target="infraestructura"></div>
+  <div class="slide-nav-dot" data-index="13" data-label="Productivos" data-target="programas-productivos"></div>
+  <div class="slide-nav-dot" data-index="14" data-label="Capacitación" data-target="capacitacion-educacion"></div>
+  <div class="slide-nav-dot" data-index="15" data-label="Salud" data-target="salud-medioambiente"></div>
+  <div class="slide-nav-dot" data-index="16" data-label="Eventos" data-target="eventos-culturales"></div>
   <div class="slide-nav-dot" data-index="17" data-label="Boletín" data-target="boletin"></div>
   <div class="slide-nav-dot" data-index="18" data-label="Contacto" data-target="contacto"></div>
   <button class="slide-nav-arrow" id="slideArrowDown" aria-label="Next slide">▼</button>
@@ -3677,30 +3679,19 @@ section.active-slide .slide-content {
       <img src="upload/logo-cmoc.png" alt="CMOC Logo">
       <img src="upload/logo-cangrejos-proyecto.png" alt="Proyecto Cangrejos Logo">
     </div>
-    <div class="hero-carousel" id="heroCarousel">
-      <div class="hero-carousel-slide active">
-        <!-- REEMPLAZAR: imagen original IMG_0668.HEIC -->
-        <img src="upload/IMG_0668.jpg" alt="Proyecto Cangrejos 1">
-      </div>
-                                
-      <div class="hero-carousel-slide">
-        <!-- REEMPLAZAR: imagen original DJI_0172.JPG -->
-        <img src="upload/DJI_0172.JPG" alt="Vista aérea 1">
-      </div>
-      <div class="hero-carousel-slide">
-        <!-- REEMPLAZAR: imagen original DJI_0442_1.jpg -->
-        <img src="upload/DJI_0442_1.jpg" alt="Vista aérea 2">
-      </div>
-      <div class="hero-carousel-slide">
-        <!-- REEMPLAZAR: imagen original DSC_3067.JPG -->
-        <img src="upload/DSC_3067.JPG" alt="Proyecto Cangrejos 5">
-      </div>
-    </div>
-    <div class="hero-carousel-dots" id="heroCarouselDots">
+    <!-- Video YouTube en lugar del carousel de fotos -->
+   <div style="position:relative; width:100%; height:0; padding-bottom:56.25%;">
+  <iframe 
+    src="https://www.youtube-nocookie.com/embed/Hz9yUuLvJuA"
+    style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
+    <!-- Carousel dots ocultos -->
+    <div class="hero-carousel-dots" id="heroCarouselDots" style="display:none;">
       <div class="hero-carousel-dot active" data-index="0"></div>
-      <div class="hero-carousel-dot" data-index="1"></div>
-      <div class="hero-carousel-dot" data-index="2"></div>
-      <div class="hero-carousel-dot" data-index="3"></div>
     </div>
   </div>
   <div class="scroll-hint">
@@ -4652,6 +4643,23 @@ section.active-slide .slide-content {
 </section>
 
 <div class="section-divider-band"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- RESPONSABILIDAD SOCIAL - VIDEO              -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="biotico-video-section" style="background:#000;padding:0;display:block;">
+  <div class="section-wrap" style="padding-top:60px;padding-bottom:20px;text-align:center;">
+    <h2 class="section-title reveal" style="font-size:clamp(30px, 3.4vw, 50px);margin-bottom:8px;">Responsabilidad Social</h2>
+  </div>
+  <div style="width:100%;max-width:1000px;margin:0 auto;padding:0 40px 60px;">
+    <video controls playsinline autoplay muted loop poster="" style="width:100%;border-radius:12px;border:2px solid rgba(167,139,250,0.3);box-shadow:0 0 60px rgba(167,139,250,0.1);display:block;">
+      <source src="upload/video.mp4" type="video/mp4">
+      Su navegador no soporta la reproducción de video.
+    </video>
+  </div>
+</section>
+
+<div class="section-divider-band"></div>
 <!-- ═══════════════════════════════════════════ -->
 <!-- SOCIAL - PIRÁMIDE DEL RELACIONAMIENTO      -->
 <!-- ═══════════════════════════════════════════ -->
@@ -4888,28 +4896,6 @@ section.active-slide .slide-content {
   </div>
 </section>
   <div class="section-divider-band"></div>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION VIDEO  -->
-<!-- ═══════════════════════════════════════════ -->
-
- <section id="biotico-video-section" style="background:#000;padding:0;display:block;">
-  <div style="width:100vw;height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
-    <video controls playsinline autoplay muted loop poster="" style="max-width:90vw;max-height:90vh;object-fit:contain;display:block;margin:auto;">
-      <source src="upload/video.mp4" type="video/mp4">
-      Su navegador no soporta la reproducción de video.
-    </video>
-  </div>
-</section>
-
-<div class="section-divider">
-  <div class="section-divider-dot"></div>
-  <div class="section-divider-line"></div>
-  <div class="section-divider-diamond"></div>
-  <div class="section-divider-line"></div>
-  <div class="section-divider-dot"></div>
-</div>
-<div class="section-divider-band"></div>
 <!-- ═══════════════════════════════════════════ -->
 <!-- SECTION 4: BOLETÍN DE PRENSA               -->
 <!-- ═══════════════════════════════════════════ -->
