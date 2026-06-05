@@ -352,7 +352,7 @@ section {
 
 /* MAP SECTION */
 #mapa {
-  background: #F5F0EB;
+  background: var(--dark);
 }
 .map-container {
   position: relative;
@@ -361,7 +361,7 @@ section {
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(139,92,246,0.25);
-  background: #F5F0EB;
+  background: #FFFFFF;
   box-shadow: 0 0 60px rgba(139,92,246,0.08);
 }
 .map-container img {
@@ -3642,27 +3642,28 @@ section.active-slide .slide-content {
 <nav class="slide-nav" id="slideNav">
   <button class="slide-nav-arrow" id="slideArrowUp" aria-label="Previous slide">▲</button>
   <div class="slide-nav-dot active" data-index="0" data-label="Inicio" data-target="hero"></div>
-  <div class="slide-nav-dot" data-index="1" data-label="Sobre el Proyecto" data-target="about"></div>
-  <div class="slide-nav-dot" data-index="2" data-label="Ubicación" data-target="biotico"></div>
-  <div class="slide-nav-dot" data-index="3" data-label="Historia" data-target="timeline"></div>
-  <div class="slide-nav-dot" data-index="4" data-label="Fases del Proyecto" data-target="donde-estamos"></div>
-  <div class="slide-nav-dot" data-index="5" data-label="Cumplimiento Ambiental" data-target="ambiental"></div>
-  <div class="slide-nav-dot" data-index="6" data-label="Monitoreo Ambiental" data-target="monitoreo-ambiental"></div>
-  <div class="slide-nav-dot" data-index="7" data-label="Monitoreo Biótico" data-target="monitoreo-biotico"></div>
-  <div class="slide-nav-dot" data-index="8" data-label="Rehabilitación" data-target="rehabilitacion"></div>
-  <div class="slide-nav-dot" data-index="9" data-label="Verde Monte" data-target="verde-monte"></div>
-  <div class="slide-nav-dot" data-index="10" data-label="Resp. Social" data-target="biotico-video-section"></div>
-  <div class="slide-nav-dot" data-index="11" data-label="Social" data-target="social"></div>
-  <div class="slide-nav-dot" data-index="12" data-label="Infraestructura" data-target="infraestructura"></div>
-  <div class="slide-nav-dot" data-index="13" data-label="Productivos" data-target="programas-productivos"></div>
-  <div class="slide-nav-dot" data-index="14" data-label="Capacitación" data-target="capacitacion-educacion"></div>
-  <div class="slide-nav-dot" data-index="15" data-label="Salud" data-target="salud-medioambiente"></div>
-  <div class="slide-nav-dot" data-index="16" data-label="Eventos" data-target="eventos-culturales"></div>
-  <div class="slide-nav-dot" data-index="17" data-label="Boletín" data-target="boletin"></div>
-  <div class="slide-nav-dot" data-index="18" data-label="Contacto" data-target="contacto"></div>
+  <div class="slide-nav-dot" data-index="1" data-label="Ubicación" data-target="mapa"></div>
+  <div class="slide-nav-dot" data-index="2" data-label="Sobre el Proyecto" data-target="about"></div>
+  <div class="slide-nav-dot" data-index="3" data-label="El Proyecto" data-target="biotico"></div>
+  <div class="slide-nav-dot" data-index="4" data-label="Historia" data-target="timeline"></div>
+  <div class="slide-nav-dot" data-index="5" data-label="Fases del Proyecto" data-target="donde-estamos"></div>
+  <div class="slide-nav-dot" data-index="6" data-label="Cumplimiento Ambiental" data-target="ambiental"></div>
+  <div class="slide-nav-dot" data-index="7" data-label="Monitoreo Ambiental" data-target="monitoreo-ambiental"></div>
+  <div class="slide-nav-dot" data-index="8" data-label="Monitoreo Biótico" data-target="monitoreo-biotico"></div>
+  <div class="slide-nav-dot" data-index="9" data-label="Rehabilitación" data-target="rehabilitacion"></div>
+  <div class="slide-nav-dot" data-index="10" data-label="Verde Monte" data-target="verde-monte"></div>
+  <div class="slide-nav-dot" data-index="11" data-label="Resp. Social" data-target="biotico-video-section"></div>
+  <div class="slide-nav-dot" data-index="12" data-label="Social" data-target="social"></div>
+  <div class="slide-nav-dot" data-index="13" data-label="Infraestructura" data-target="infraestructura"></div>
+  <div class="slide-nav-dot" data-index="14" data-label="Productivos" data-target="programas-productivos"></div>
+  <div class="slide-nav-dot" data-index="15" data-label="Capacitación" data-target="capacitacion-educacion"></div>
+  <div class="slide-nav-dot" data-index="16" data-label="Salud" data-target="salud-medioambiente"></div>
+  <div class="slide-nav-dot" data-index="17" data-label="Eventos" data-target="eventos-culturales"></div>
+  <div class="slide-nav-dot" data-index="18" data-label="Boletín" data-target="boletin"></div>
+  <div class="slide-nav-dot" data-index="19" data-label="Contacto" data-target="contacto"></div>
   <button class="slide-nav-arrow" id="slideArrowDown" aria-label="Next slide">▼</button>
 </nav>
-<div class="slide-counter" id="slideCounter">01 / 19</div>
+<div class="slide-counter" id="slideCounter">01 / 20</div>
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- SECTION 1: HERO / MAIN PAGE                -->
@@ -3697,6 +3698,20 @@ section.active-slide .slide-content {
   <div class="scroll-hint">
     <span>Scroll</span>
     <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECCIÓN: MAPA DE UBICACIÓN                  -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="mapa">
+  <div class="section-wrap">
+    <div class="section-label reveal">Ubicación</div>
+    <div class="map-container reveal">
+      <img src="upload/mapacmoc.png" alt="Mapa del Proyecto Los Cangrejos">
+      <div class="map-highlight"></div>
+      <div class="map-label">ECUADOR</div>
+    </div>
   </div>
 </section>
 
