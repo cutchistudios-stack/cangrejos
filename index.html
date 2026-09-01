@@ -3567,7 +3567,8 @@ section.active-slide .slide-content {
 #timeline .section-title { margin-bottom: 6px !important; }
 #timeline .timeline-track { margin-top: 8px !important; height: 140px !important; }
 #timeline .corporate-round-images { margin-top: 16px !important; gap: 20px !important; }
-#timeline .corporate-round-frame { width: 120px !important; height: 120px !important; }
+#timeline .corporate-round-frame { width: 180px !important; height: 180px !important; flex: 0 0 180px; }
+#timeline .corporate-round-images { flex-wrap: nowrap !important; flex-direction: row !important; }
 #timeline .tl-year { font-size: 14px !important; }
 #timeline .tl-label { font-size: 12px !important; }
 #donde-estamos .section-wrap { padding-top: 20px !important; padding-bottom: 10px !important; }
@@ -3648,10 +3649,10 @@ section.active-slide .slide-content {
   <div class="slide-nav-dot" data-index="4" data-label="Historia" data-target="timeline"></div>
   <div class="slide-nav-dot" data-index="5" data-label="Fases del Proyecto" data-target="donde-estamos"></div>
   <div class="slide-nav-dot" data-index="6" data-label="Cumplimiento Ambiental" data-target="ambiental"></div>
-  <div class="slide-nav-dot" data-index="7" data-label="Monitoreo Ambiental" data-target="monitoreo-ambiental"></div>
-  <div class="slide-nav-dot" data-index="8" data-label="Monitoreo Biótico" data-target="monitoreo-biotico"></div>
+  <div class="slide-nav-dot" data-index="7" data-label="Monitoreo Ambiental" data-target="monitoreo-ambiental" style="display:none;"></div>
+  <div class="slide-nav-dot" data-index="8" data-label="Monitoreo Biótico" data-target="monitoreo-biotico" style="display:none;"></div>
   <div class="slide-nav-dot" data-index="9" data-label="Rehabilitación" data-target="rehabilitacion"></div>
-  <div class="slide-nav-dot" data-index="10" data-label="Verde Monte" data-target="verde-monte"></div>
+  <div class="slide-nav-dot" data-index="10" data-label="Verde Monte" data-target="verde-monte" style="display:none;"></div>
   <div class="slide-nav-dot" data-index="11" data-label="Resp. Social" data-target="biotico-video-section"></div>
   <div class="slide-nav-dot" data-index="12" data-label="Social" data-target="social"></div>
   <div class="slide-nav-dot" data-index="13" data-label="Infraestructura" data-target="infraestructura"></div>
@@ -4242,8 +4243,8 @@ section.active-slide .slide-content {
   <!-- ═══════════════════════════════════════════ -->
 <!-- MONITOREO AMBIENTAL (4 botones) - NEW SECTION -->
 <!-- ═══════════════════════════════════════════ -->
-<div class="section-divider-band"></div>
-<section id="monitoreo-ambiental" style="background:linear-gradient(180deg, var(--dark), var(--dark2));">
+<div class="section-divider-band" style="display:none;"></div>
+<section id="monitoreo-ambiental" style="display:none;background:linear-gradient(180deg, var(--dark), var(--dark2));">
   <div class="section-wrap">
     <div class="reveal">
       <h2 class="section-title">Monitoreo Ambiental</h2>
@@ -4282,8 +4283,8 @@ section.active-slide .slide-content {
 <!-- ═══════════════════════════════════════════ -->
 
 <!-- 8d: Monitoreo Biótico -->
-<div class="section-divider-band"></div>
-<section id="monitoreo-biotico">
+<div class="section-divider-band" style="display:none;"></div>
+<section id="monitoreo-biotico" style="display:none;">
   <div class="section-wrap">
     <div class="reveal">
       <div class="monitoring-section-header">
@@ -4615,9 +4616,9 @@ section.active-slide .slide-content {
     </div>
   </div>
 </section>-->
-<div class="section-divider-band"></div>
-<!-- 8e: Programa Verde Monte -->
-<section id="verde-monte">
+<div class="section-divider-band" style="display:none;"></div>
+<!-- 8e: Programa Verde Monte (OCULTO TEMPORALMENTE; CÓDIGO CONSERVADO) -->
+<section id="verde-monte" style="display:none;">
   <div class="section-wrap">
     <div class="reveal" style="display:flex;align-items:center;gap:20px;margin-bottom:8px;flex-wrap:wrap">
       <img src="upload/logoverdemonte.png" alt="Logo Verde Monte" style="height:72px;width:auto;object-fit:contain;filter:drop-shadow(0 0 20px rgba(167,139,250,0.3))">
