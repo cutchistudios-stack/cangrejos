@@ -3631,11 +3631,11 @@ section.active-slide .slide-content {
 
 /* REVISTA MI ODIN */
 .odin-magazines{background:linear-gradient(180deg,var(--dark),var(--dark2));}
-.odin-magazine-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:60px;}
+.odin-magazine-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:60px;align-items:start;}
 .odin-magazine-card{display:block;min-width:0;border:1px solid rgba(251,173,24,.15);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02);text-decoration:none;color:inherit;transition:transform .25s,border-color .25s;}
 .odin-magazine-card:hover{transform:translateY(-5px);border-color:var(--tomate);}
 .odin-magazine-cover{height:420px;display:flex;align-items:center;justify-content:center;padding:18px;}
-.odin-magazine-cover img{width:auto;height:100%;max-width:100%;object-fit:contain;}
+.odin-magazine-cover img{width:100%;height:100%;max-width:100%;object-fit:contain;border-radius:8px;}
 .odin-cover-placeholder{width:280px;max-width:90%;height:100%;background:linear-gradient(160deg,#b58b3a,#65472a 50%,#172c36);display:flex;flex-direction:column;justify-content:space-between;padding:25px;color:#fff;box-shadow:0 12px 28px #0007;}
 .odin-cover-placeholder span{font-weight:900;letter-spacing:.12em;font-size:35px}.odin-cover-placeholder small{font-size:12px;letter-spacing:.12em}.odin-cover-placeholder strong{font-size:100px;opacity:.35;align-self:end}
 .odin-magazine-info{border-top:1px solid rgba(251,173,24,.15);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
@@ -3643,18 +3643,19 @@ section.active-slide .slide-content {
 @media(max-width:650px){.odin-magazine-grid{grid-template-columns:1fr}.odin-magazine-cover{height:340px}}
 
 /* ODIN additions — aligned typography, spacing and downloadable fact sheet */
-.odin-gallery-description{max-width:1100px;margin:10px auto 20px;line-height:1.55;font-size:clamp(14px,1.15vw,17px);font-weight:400;color:rgba(255,255,255,.87);text-align:center;}
-.gallery-section:has(.odin-gallery-description) .gallery-grid{margin-top:14px!important;}
+.odin-gallery-description{max-width:1120px;margin:14px auto 24px;line-height:1.7;font-size:clamp(14px,1.15vw,17px);font-weight:400;color:rgba(255,255,255,.87);text-align:justify;text-align-last:center;}
+.gallery-section:has(.odin-gallery-description) .gallery-grid{margin-top:18px!important;}
 #infraestructura,#programas-productivos,#capacitacion-educacion,#salud-medioambiente,#eventos-culturales{overflow-y:auto;}
-.odin-factsheet-actions{display:flex;justify-content:center;margin:18px auto 24px;position:relative;z-index:4;}
+#infraestructura .section-title,#programas-productivos .section-title,#capacitacion-educacion .section-title,#salud-medioambiente .section-title,#eventos-culturales .section-title{text-align:center;}
+.odin-factsheet-actions{display:flex;justify-content:center;margin:42px auto 18px;position:relative;z-index:4;}
 .odin-factsheet-button{display:inline-flex;align-items:center;gap:13px;padding:15px 25px;border:1px solid #ffb51e;border-radius:8px;background:#ffb51e;color:#17102b;text-decoration:none;font-weight:800;font-size:clamp(13px,1.15vw,16px);letter-spacing:.02em;box-shadow:0 7px 26px rgba(255,181,30,.17);transition:background .2s, transform .2s;}
 .odin-factsheet-button:hover{background:#ffcc58;transform:translateY(-2px)}
 .odin-factsheet-button span{font-size:22px;line-height:1}
-.odin-juntos-section{background:linear-gradient(150deg,#140c28 5%,#26144a 56%,#100b20 100%);}
-.odin-juntos-inner{min-height:75vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:35px;text-align:center;}
-.odin-juntos-logo{width:min(560px,85vw);height:auto;image-rendering:auto;background:#fff;padding:20px 28px;border-radius:10px;object-fit:contain;}
+.odin-juntos-section{background:linear-gradient(180deg,#120920 0%, #10081d 100%);}
+.odin-juntos-inner{min-height:75vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;text-align:center;}
+.odin-juntos-logo{width:min(760px,88vw);height:auto;image-rendering:auto;background:transparent;padding:0;border-radius:0;object-fit:contain;filter:drop-shadow(0 10px 26px rgba(0,0,0,.25));}
 .odin-juntos-statement{max-width:1000px;font-size:clamp(23px,2.5vw,38px);line-height:1.43;color:#fff;font-weight:600;}
-@media(max-width:700px){.odin-gallery-description{text-align:left;font-size:14px;line-height:1.48;margin:10px 0 16px}.odin-juntos-inner{gap:24px}.odin-juntos-logo{padding:15px}.odin-juntos-statement{font-size:22px}}
+@media(max-width:700px){.odin-gallery-description{text-align:justify;text-align-last:center;font-size:14px;line-height:1.55;margin:12px auto 18px}.odin-juntos-inner{gap:24px}.odin-juntos-statement{font-size:22px}}
 
 </style>
 </head>
@@ -3785,8 +3786,7 @@ section.active-slide .slide-content {
   <div class="biotico-particles" id="bioticoParticles"></div>
   <div class="section-wrap" style="max-width:1560px;">
     <h2 class="section-title reveal" style="font-size:clamp(30px, 3.4vw, 50px);">Proyecto Los Cangrejos</h2>
-    <div class="odin-factsheet-actions reveal"><a class="odin-factsheet-button" href="upload/Fact_Sheet_ODIN_v03.pdf" download="Fact_Sheet_Proyecto_Los_Cangrejos.pdf" type="application/pdf" aria-label="Descargar Fact sheet del Proyecto Los Cangrejos en PDF"><span aria-hidden="true">↓</span> Fact sheet del Proyecto Los Cangrejos</a></div>
-    <div class="cangrejos-dual-img reveal" style="transition-delay:0.2s; transform: scale(1.2); transform-origin: top center; margin-bottom: 80px;">
+    <div class="cangrejos-dual-img reveal" style="transition-delay:0.2s; transform: scale(1.2); transform-origin: top center; margin-bottom: 0;">
            <div class="cangrejos-thumb-btn" onclick="openCangrejoFullscreen('upload/mapa2.jpeg','Regional')">
              <img src="upload/mapa2.jpeg" alt="Regional">
              <div class="cangrejos-thumb-label">Regional</div>
@@ -3796,6 +3796,7 @@ section.active-slide .slide-content {
              <div class="cangrejos-thumb-label">Los Cangrejos</div>
            </div>
     </div>
+    <div class="odin-factsheet-actions reveal"><a class="odin-factsheet-button" href="upload/Fact_Sheet_ODIN_v03.pdf" download="Fact_Sheet_Proyecto_Los_Cangrejos.pdf" type="application/pdf" aria-label="Descargar Fact sheet del Proyecto Los Cangrejos en PDF"><span aria-hidden="true">↓</span> Fact sheet del Proyecto Los Cangrejos</a></div>
   </div>
 </section>
 
@@ -3957,7 +3958,7 @@ section.active-slide .slide-content {
 <!-- SECTION 6: DONDE ESTAMOS Y HACIA DÓNDE VAMOS -->
 <!-- ═══════════════════════════════════════════ -->
 <section id="donde-estamos" style="display:flex;align-items:center;justify-content:center;overflow:hidden;">
-  <img src="upload/linea_tiempo_actualizada.png" alt="¿Dónde estamos y hacia dónde vamos?" style="display:block;width:100%;height:auto;max-height:calc(150vh - 100px);object-fit:contain;object-position:center;">
+  <img src="upload/linea_tiempo_actualizada.png" alt="¿Dónde estamos y hacia dónde vamos?" style="display:block;width:100%;height:auto;max-height:calc(100vh - 100px);object-fit:contain;object-position:center;">
 </section>
 
 <div class="section-divider-band"></div>
@@ -4912,11 +4913,11 @@ section.active-slide .slide-content {
     <h2 class="section-title reveal">Revista Mi ODIN</h2>
     <div class="odin-magazine-grid reveal">
       <a class="odin-magazine-card" href="https://issuu.com/odinmining.ec/docs/revista_mi_odin_ed_fef216e30c615f" target="_blank" rel="noopener noreferrer" aria-label="Leer primera edición de Revista Mi ODIN en Issuu">
-        <div class="odin-magazine-cover"><div class="odin-cover-placeholder"><span>MI ODIN</span><small>REVISTA INSTITUCIONAL</small><strong>01</strong></div></div>
+        <div class="odin-magazine-cover"><img src="upload/mi_odin_01.png" alt="Portada Revista Mi ODIN edición 01"></div>
         <div class="odin-magazine-info"><strong>Primera edición</strong><span>Ver revista ↗</span></div>
       </a>
       <a class="odin-magazine-card" href="https://issuu.com/odinmining.ec/docs/revista_mi_odin-_2da._edici_n_ene-jul_2026" target="_blank" rel="noopener noreferrer" aria-label="Leer segunda edición de Revista Mi ODIN en Issuu">
-        <div class="odin-magazine-cover"><div class="odin-cover-placeholder"><span>MI ODIN</span><small>ENERO – JULIO 2026</small><strong>02</strong></div></div>
+        <div class="odin-magazine-cover"><img src="upload/mi_odin_02.png" alt="Portada Revista Mi ODIN edición 02"></div>
         <div class="odin-magazine-info"><strong>Segunda edición</strong><span>Ver revista ↗</span></div>
       </a>
     </div>
@@ -4927,7 +4928,7 @@ section.active-slide .slide-content {
 <!-- COMPROMISO JUNTOS CRECEMOS -->
 <section id="juntos-crecemos" class="odin-juntos-section">
   <div class="section-wrap odin-juntos-inner">
-    <img class="odin-juntos-logo reveal" src="upload/juntos_crecemos_logo.jpeg" alt="#JUNTOSCRECEMOS">
+    <img class="odin-juntos-logo reveal" src="upload/juntos_crecemos_logo_transparent.png" alt="#JUNTOSCRECEMOS">
     <p class="odin-juntos-statement reveal">Juntos Crecemos expresa nuestro compromiso de trabajar con las comunidades, con seguridad, responsabilidad, respeto e integridad.</p>
   </div>
 </section>
